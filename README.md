@@ -15,38 +15,39 @@ Le but principal est de **conteneuriser une application de streaming analytics**
 
 ## 📋 Installation et Démarrage
 
+### Étape 1 : Installation
 ```bash
-git clone https://github.com/bntranduc/spark-streaming-project
-cd streaming-analytics-docker
+git clone git@github.com:yahia-adam/streaming-analytics-docker.git && cd streaming-analytics-docker
 ```
 
 ### Étape 2 : Configuration
 
 ```bash
-mv env.exemple .env
-cat .env
+mv env.exemple .env && cat .env
 ```
 
-### Étape 4 : Construction et démarrage
+
+
+## 🎖️ Utilisaation
+
+### Démarrage
 
 ```bash
-# Démarrer tous les services
-docker-compose up -d
-
-# Vérifier que tous les conteneurs sont en cours d'exécution
-docker-compose ps
+docker-compose up
 ```
 
-### Étape 5 : Vérification du déploiement
+### Streamlit Dashboard
+```bash
+http://localhost:8501
+```
+### Producer Spark UI
+```bash
+http://localhost:4040
+```
+### Consumer Spark UI
 
 ```bash
-# Vérifier les logs de démarrage
-docker-compose logs -f
-
-# Vérifier les interfaces web
-echo "Streamlit Dashboard: http://localhost:8501"
-echo "Producer Spark UI: http://localhost:4040"
-echo "Consumer Spark UI: http://localhost:4041"
+http://localhost:4041
 ```
 
 ## 🏗️ Architecture Conteneurisée
