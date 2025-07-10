@@ -29,7 +29,9 @@ services:
       - engnetwork
 
   producer:
-    image: artorius104/spark-streaming-project-producer:v1
+    build:
+      context: ./Producer
+      dockerfile: Dockerfile
     ports:
       - "4040:4040"
     depends_on:
@@ -56,7 +58,9 @@ services:
       - webNetwork
 
   consumer:
-    image: artorius104/spark-streaming-project-consumer:v1
+    build:
+      context: ./Consumer
+      dockerfile: Dockerfile
     ports:
       - "4041:4040"
     depends_on:
@@ -80,7 +84,9 @@ services:
       - dbNetwork
 
   streamlit:
-    image: artorius104/spark-streaming-project-streamlit:v1
+    build:
+      context: ./DataVisualisation
+      dockerfile: Dockerfile
     ports:
       - "8501:8501"
     environment:
@@ -98,8 +104,10 @@ networks:
   # PRIV
   engnetwork:
     driver: bridge
+    # internal: true
   dbNetwork:
     driver: bridge
+    # internal: true
 
   # PUB
   webNetwork:

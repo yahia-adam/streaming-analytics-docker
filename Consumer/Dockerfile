@@ -12,7 +12,9 @@ ENV JAVA_OPTS="-Xmx2g -Xms1g"
 ENV SPARK_OPTS="--driver-memory 1g --executor-memory 1g --driver-java-options '-Xmx1g -Xms512m'"
 
 WORKDIR /app
-COPY target/scala-2.12/Consumer-assembly-1.0.0.jar /app/
+
+RUN curl -L --fail -o /app/Consumer-assembly-1.0.0.jar \
+    https://github.com/yahia-adam/streaming-analytics-docker/releases/download/v1.0.0/Consumer-assembly-1.0.0.jar
 
 CMD ["/opt/spark/bin/spark-submit", \
     "--packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,org.postgresql:postgresql:42.3.1", \
