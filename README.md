@@ -33,7 +33,7 @@ mv env.exemple .env && cat .env
 ### Démarrage
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 ### Streamlit Dashboard
