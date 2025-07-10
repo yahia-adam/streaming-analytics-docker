@@ -13,6 +13,10 @@ Le but principal est de **conteneuriser une application de streaming analytics**
 - Optimisation des performances
 - Orchestration multi-conteneurs
 
+## 🔥 Démonstration
+
+![giff demon](demo.gif)
+
 ## 📋 Installation et Démarrage
 
 ### Étape 1 : Installation
