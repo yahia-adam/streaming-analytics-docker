@@ -1,2 +1,3 @@
 yelp_dataset/business.parquet
 yelp_dataset/users.parquet
+.env
